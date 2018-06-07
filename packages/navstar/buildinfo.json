@@ -3,9 +3,9 @@
   "sources": {
     "navstar": {
       "kind": "git",
-      "git": "https://github.com/dcos/navstar.git",
-      "ref": "94cffea2c16e8082743de04bd72311e60bedc324",
-      "ref_origin": "dcos/1.9"
+      "git": "https://github.com/newrelic-forks/navstar.git",
+      "ref": "ab0b775700d08e53b83b90fbf23bdee61f8a9f00",
+      "ref_origin": "dcos-1.9-newrelic"
     }
   },
   "sysctl": {
