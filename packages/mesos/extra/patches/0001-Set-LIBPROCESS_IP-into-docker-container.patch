@@ -1,0 +1,28 @@
+From 59ba208d0407ca14d8df9d50daff6ab50c202b39 Mon Sep 17 00:00:00 2001
+From: Michael Park <mpark@apache.org>
+Date: Thu, 15 Oct 2015 19:54:02 -0700
+Subject: [PATCH] Set LIBPROCESS_IP into docker container.
+
+---
+ src/docker/docker.cpp | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/docker/docker.cpp b/src/docker/docker.cpp
+index 8c6055fd6..98f857896 100755
+--- a/src/docker/docker.cpp
++++ b/src/docker/docker.cpp
+@@ -555,6 +555,11 @@ Future<Option<int>> Docker::run(
+   environmentVariables["MESOS_SANDBOX"] = mappedDirectory;
+   environmentVariables["MESOS_CONTAINER_NAME"] = name;
+ 
++  Option<string> libprocessIP = os::getenv("LIBPROCESS_IP");
++  if (libprocessIP.isSome()) {
++    environmentVariables["LIBPROCESS_IP"] = libprocessIP.get();
++  }
++
+   foreachpair(const string& key, const string& value, environmentVariables) {
+     argv.push_back("-e");
+     argv.push_back(key + "=" + value);
+-- 
+2.15.1
+
