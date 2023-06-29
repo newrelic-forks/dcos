@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:xenial-20210416
 
 # Let's try to limit the number of layers to minimum:
 ENV OPENRESTY_VERSION=1.13.6.1 \
