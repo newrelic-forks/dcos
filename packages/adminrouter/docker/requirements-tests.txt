@@ -7,11 +7,13 @@ ipdb==0.10.3
 isort==4.2.15
 psutil==5.2.0
 pyaml==16.12.2
-pylint==1.6.5
+pylint==2.6.1
 pyroute2==0.4.21
 pytest-mccabe==0.1
 pytest-pythonpath==0.7.1
 pytest-repeat==0.4.1
 pytest-timeout==1.2.0
 pytest==3.2.1
-requests==2.18.4
+requests==2.32.2
+idna>=3.7 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=1.26.19 # not directly required, pinned by Snyk to avoid a vulnerability
